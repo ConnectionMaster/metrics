@@ -1,5 +1,7 @@
 name: "📌 Starred topics"
 cost: N/A
+category: github
+index: 7
 supports:
   - user
 inputs:

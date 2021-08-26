@@ -1,6 +1,6 @@
 query BaseRepositories {
   $account(login: "$login") {
-    repositories($after first: $repositories $forks, orderBy: {field: UPDATED_AT, direction: DESC}) {
+    $type($after first: $repositories $forks $affiliations $constraints, orderBy: {field: UPDATED_AT, direction: DESC}) {
       edges {
         cursor
       }
@@ -34,6 +34,9 @@ query BaseRepositories {
         pr_open: pullRequests(states: OPEN) {
           totalCount
         }
+        pr_closed: pullRequests(states: CLOSED) {
+          totalCount
+        }
         pr_merged: pullRequests(states: MERGED) {
           totalCount
         }
@@ -42,7 +45,14 @@ query BaseRepositories {
         }
         forkCount
         licenseInfo {
+          name
           spdxId
+        }
+        deployments {
+          totalCount
+        }
+        environments {
+          totalCount
         }
       }
     }

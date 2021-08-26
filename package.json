@@ -1,15 +1,19 @@
 {
   "name": "metrics",
-  "version": "3.4.0-beta",
-  "description": "An image generator with 20+ metrics about your GitHub account such as activity, community, repositories, coding habits, website performances, music played, starred topics, etc. that you can put on your profile or elsewhere !",
+  "version": "3.14.0-beta",
+  "description": "An infographics generator with 30+ plugins and 200+ options to display stats about your GitHub account and render them as SVG, Markdown, PDF or JSON!",
   "main": "index.mjs",
   "scripts": {
     "start": "node source/app/web/index.mjs",
-    "test": "npx jest",
+    "test": "jest --runInBand",
     "index": "node .github/index.mjs",
-    "upgrade": "npm install @actions/core@latest @actions/github@latest @octokit/graphql@latest @octokit/rest@latest axios@latest compression@latest ejs@latest express@latest express-rate-limit@latest faker@latest image-to-base64@latest js-yaml@latest memory-cache@latest prismjs@latest puppeteer@latest svgo@latest vue@latest jest@latest libxmljs@latest",
     "quickstart": "node .github/quickstart/index.mjs",
-    "linter": "npx eslint source/**/*.mjs"
+    "preview": "node .github/preview.mjs",
+    "linter": "eslint source/**/*.mjs --quiet",
+    "format": "eslint source/**/*.mjs --fix",
+    "dev": "nodemon source/app/web/index.mjs -e mjs,css,ejs,json",
+    "postinstall": "node node_modules/puppeteer/install.js",
+    "indepth": "node source/plugins/languages/analyzers.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,35 +26,53 @@
   },
   "homepage": "https://github.com/lowlighter/metrics#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.5.0",
     "@actions/github": "^4.0.0",
-    "@octokit/graphql": "^4.5.9",
-    "@octokit/rest": "^18.0.15",
+    "@octokit/graphql": "^4.6.4",
+    "@octokit/rest": "^18.9.0",
+    "@primer/css": "^17.6.0",
     "axios": "^0.21.1",
+    "clipboard": "^2.0.8",
     "compression": "^1.7.4",
-    "dayjs": "^1.10.4",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
+    "emoji-name-map": "^1.2.9",
     "express": "^4.17.1",
-    "express-rate-limit": "^5.2.3",
-    "faker": "^5.2.0",
-    "image-to-base64": "^2.1.1",
-    "js-yaml": "^4.0.0",
+    "express-rate-limit": "^5.3.0",
+    "faker": "^5.5.3",
+    "jimp": "^0.16.1",
+    "js-yaml": "^4.1.0",
+    "linguist-js": "^1.8.0",
+    "marked": "^3.0.0",
     "memory-cache": "^0.2.0",
-    "prismjs": "^1.23.0",
-    "puppeteer": "^5.5.0",
-    "simple-git": "^2.31.0",
-    "svgo": "^1.3.2",
+    "minimatch": "^3.0.4",
+    "node-chartist": "^1.0.5",
+    "node-fetch": "^2.6.1",
+    "open-graph-scraper": "^4.9.0",
+    "png-js": "^1.0.0",
+    "prismjs": "^1.24.1",
+    "puppeteer": "^10.2.0",
+    "rss-parser": "^3.12.0",
+    "sanitize-html": "^2.4.0",
+    "simple-git": "^2.44.0",
+    "svgo": "^2.4.0",
+    "twemoji-parser": "^13.1.0",
     "vue": "^2.6.12",
-    "vue-prism-component": "^1.2.0"
+    "vue-prism-component": "^1.2.0",
+    "xml-formatter": "^2.4.0"
   },
   "devDependencies": {
-    "eslint": "^7.19.0",
-    "jest": "^26.6.3",
-    "libxmljs": "^0.19.7"
+    "eslint": "^7.32.0",
+    "jest": "^27.0.3",
+    "libxmljs2": "^0.27.0",
+    "nodemon": "^2.0.7"
   },
   "jest": {
     "testEnvironment": "node",
     "testTimeout": 60000,
     "transform": {}
+  },
+  "optionalDependencies": {
+    "gifencoder": "^2.0.1",
+    "utf-8-validate": "^5.0.5"
   }
 }

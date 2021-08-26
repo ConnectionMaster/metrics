@@ -1,6 +1,6 @@
-### 🗂️ Projects
+### 🗂️ Active projects
 
-    ⚠️ This plugin requires a personal token with public_repo scope.
+> ⚠️ This plugin requires a personal token with public_repo scope.
 
 The *projects* plugin displays the progress of your profile projects.
 

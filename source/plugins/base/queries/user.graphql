@@ -3,12 +3,13 @@ query BaseUser {
     databaseId
     name
     login
+    location
     createdAt
     avatarUrl
     websiteUrl
     isHireable
     twitterUsername
-    repositories(last: 0 $forks) {
+    repositories(last: 0 $forks $affiliations) {
       totalCount
       totalDiskUsage
       nodes {
@@ -47,7 +48,7 @@ query BaseUser {
         }
       }
     }
-    repositoriesContributedTo {
+    repositoriesContributedTo(includeUserRepositories: true) {
       totalCount
     }
     followers {

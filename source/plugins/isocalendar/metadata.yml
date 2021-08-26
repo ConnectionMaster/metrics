@@ -1,5 +1,7 @@
 name: "📅 Isometric commit calendar"
 cost: 2-3 REST requests
+category: github
+index: 0
 supports:
   - user
 inputs:

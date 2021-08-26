@@ -25,10 +25,27 @@
           </div>
           <% if (plugins.tweets.profile) { %>
             <% if (plugins.tweets.list.length) { %>
-              <% for (const {text, created_at} of plugins.tweets.list) { %>
+              <% for (const {text, createdAt, attachments} of plugins.tweets.list) { %>
                 <div class="tweet">
                   <%- text %>
-                  <div class="date"><%= new Date(created_at).toGMTString() %></div>
+                  <% if (attachments?.length) { %>
+                    <div class="attachments largeable largeable-width-auto">
+                      <% for (const {image, title, description, website} of attachments) { %>
+                        <div style="background-image: url('<%= image %>');">
+                          <span style="display: none;">
+                            Hack to avoid self-closing empty div, do not remove
+                          </span>
+                          <% if (title) { %>
+                            <div class="infos">
+                              <div class="title"><%= title %></div>
+                              <div class="description"><%= description %></div>
+                            </div>
+                          <% } %>
+                        </div>
+                      <% } %>
+                    </div>
+                  <% } %>
+                  <div class="date"><%= createdAt %></div>
                 </div>
               <% } %>
             <% } else { %>

@@ -1,5 +1,7 @@
-name: "🗂️ Projects"
+name: "🗂️ Active projects"
 cost: 1 GraphQL request + 1 GraphQL request per repository project
+category: github
+index: 15
 supports:
   - user
   - organization
