@@ -6,17 +6,21 @@ For convenience, a free shared instance is available at [metrics.lecoq.io](https
 
 Create a repository with the same name as your GitHub login (if it doesn't exist).
 
-![Setup personal repository](/.github/readme/imgs/setup_personal_repository.png)
+![Setup personal repository](/.github/readme/imgs/setup_personal_repository.light.png#gh-light-mode-only)
+![Setup personal repository](/.github/readme/imgs/setup_personal_repository.dark.png#gh-dark-mode-only)
 
 Its `README.md` will be displayed on your user profile:
 
-![GitHub Profile Example](/.github/readme/imgs/example_github_profile.png)
+![GitHub Profile Example](/.github/readme/imgs/example_github_profile.light.png#gh-light-mode-only)
+![GitHub Profile Example](/.github/readme/imgs/example_github_profile.dark.png#gh-dark-mode-only)
 
 ## 2️ Configure *metrics*
 
 Visit [metrics.lecoq.io](https://metrics.lecoq.io) and start playing around!
 
 > ⚠️ Some plugins are not available on the web instance. Consider using [GitHub action](https://github.com/marketplace/actions/metrics-embed) to enjoy all features!
+
+> ℹ️ [metrics.lecoq.io](https://metrics.lecoq.io) always run on [latest release](https://github.com/lowlighter/metrics/releases/latest). To test upcoming releases, use [beta-metrics.lecoq.io](https://beta-metrics.lecoq.io), which always run on `@master` instead.
 
 ![metrics.lecoq.io](/.github/readme/imgs/setup_shared.light.png#gh-light-mode-only)
 ![metrics.lecoq.io](/.github/readme/imgs/setup_shared.dark.png#gh-dark-mode-only)

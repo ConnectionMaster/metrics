@@ -1,5 +1,6 @@
 <!--header-->
 <table>
+  <tr><td colspan="2"><a href="/README.md#%EF%B8%8F-templates">← Back to templates index</a></td></tr>
   <tr><th colspan="2"><h3>📒 Markdown template</h3></th></tr>
   <tr><td colspan="2" align="center"><p>A template capable of rendering markdown from a given template file.</p>
 </td></tr>
@@ -8,7 +9,7 @@
     <td><a href="/source/plugins/activity/README.md" title="📰 Recent activity">📰</a> <a href="/source/plugins/posts/README.md" title="✒️ Recent posts">✒️</a> <a href="/source/plugins/rss/README.md" title="🗼 Rss feed">🗼</a> <a href="/source/plugins/topics/README.md" title="📌 Starred topics">📌</a> <a href="/source/plugins/tweets/README.md" title="🐤 Latest tweets">🐤</a> <code>✓ embed()</code></td>
   </tr>
   <tr>
-    <td><code>👤 Users</code> <code>👥 Organizations</code></td>
+    <td><code>👤 Users</code> <code>👥 Organizations</code> <code>📓 Repositories</code></td>
   </tr>
   <tr>
     <td><code>#️⃣ JSON</code> <code>🔠 Markdown</code> <code>🔠 Markdown (PDF)</code></td>
@@ -31,7 +32,7 @@ Since the resulting output is a markdown file, it is possible to do additional f
 The templating engine is [EJS](https://github.com/mde/ejs) and can be used to interpolate any data retrieved by metrics.
 
 * `<%=` and `%>` are used to display escaped output
-  * `{{` and `}}` is also supported as syntaxic sugar
+  * `{{` and `}}` is also supported as syntactic sugar
 * `<%-` and `%>` are used to display raw output
 * `<%` and `%>` are used to execute JavaScript, and can also contains control statements such as conditionals and loops
 
@@ -129,7 +130,7 @@ The `embed()` function takes two arguments:
 
 > 💡 The `plugin_` prefix can be dropped for convenience
 
-> 💡 The `embed()` function does not have `🗃️ base` plugin enabled by default. To use it, it is required to explicitely pass them through `base` option.
+> 💡 The `embed()` function does not have `🗃️ base` plugin enabled by default. To use it, it is required to explicitly pass them through `base` option.
 
 ## ℹ️ Examples workflows
 
@@ -167,11 +168,6 @@ with:
   plugin_rss: yes
   plugin_rss_source: https://news.ycombinator.com/rss
   plugin_rss_limit: 4
-  plugin_tweets: yes
-  plugin_tweets_token: ${{ secrets.TWITTER_TOKEN }}
-  plugin_tweets_user: github
-  plugin_tweets_attachments: yes
-  plugin_tweets_limit: 2
   plugin_topics: yes
   plugin_topics_limit: 24
   plugin_isocalendar: yes

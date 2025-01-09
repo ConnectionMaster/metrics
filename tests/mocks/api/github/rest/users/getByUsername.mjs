@@ -1,5 +1,5 @@
 /**Mocked data */
-export default function({ faker }, target, that, [{ username }]) {
+export default async function({faker}, target, that, [{username}]) {
   console.debug("metrics/compute/mocks > mocking rest api result > rest.repos.getByUsername")
   return ({
     status: 200,
@@ -12,7 +12,7 @@ export default function({ faker }, target, that, [{ username }]) {
     data: {
       login: faker.internet.userName(),
       avatar_url: null,
-      contributions: faker.datatype.number(1000),
+      contributions: faker.number.int(1000),
     },
   })
 }
